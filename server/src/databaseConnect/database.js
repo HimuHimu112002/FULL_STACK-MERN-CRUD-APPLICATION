@@ -5,5 +5,4 @@ function DatabaseConnection() {
         console.log("Database Connection Complete")
     });
 }
-
 module.exports = DatabaseConnection;

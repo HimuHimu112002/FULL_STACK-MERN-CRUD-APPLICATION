@@ -23,17 +23,11 @@ app.use(mongoSanitizer())
 // rate limiter implementation
 ratelimit({windowMs: 15 * 60 * 100, max: 3000})
 
-
-// frontend connect
-app.use(express.static('client/dist'))
-app.get("*", function(req, res){
-    req.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'))
-})
-
 // api in-point
 app.use("/api/v1", router)
 
 router.use('*', (req, res)=>{
     res.status(404).send('404 - Not Found');
 })
+
 module.exports = app

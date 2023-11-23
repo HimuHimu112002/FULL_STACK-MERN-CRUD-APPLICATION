@@ -23,8 +23,7 @@ async function CreateStudent(req, res){
 // Read student list
 async function getAllData(req, res){
     try {
-
-      let data = await StudentListModel.findAll({})
+      let data = await StudentListModel.find({})
       res.status(200).json({ status: "Successfully you get all data", data: data});
     } catch (e) {
       res.status(200).json({ status: "error", error: e.toString() });
@@ -33,7 +32,7 @@ async function getAllData(req, res){
 
 
 // Update student list
-async function UpdateStudent(req, res){
+async function UpdateStudent(req, res){ 
     let id = req.params.id;
     let Query = {_id:id};
     try {
