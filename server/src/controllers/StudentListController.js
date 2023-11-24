@@ -16,6 +16,7 @@ async function CreateStudent(req, res){
     })   
     student.save()
     res.send({success: "student Created Successfully"})
+    
 
 }
 
@@ -51,9 +52,9 @@ async function DeleteStudent(req, res){
     let id = req.params.id;
     try {
         let data = await StudentListModel.deleteOne({_id: id});
-        res.status(200).json({ status: "Student Delete Success", data: data });
+        res.status(200).json({ status: "Success", data: data });
     } catch (e) {
-        res.status(200).json({ status: "error", error: e.toString() });
+        res.status(200).json({ status: "fail", error: e.toString() });
     }
 }
 module.exports = {CreateStudent,getAllData,UpdateStudent,DeleteStudent}

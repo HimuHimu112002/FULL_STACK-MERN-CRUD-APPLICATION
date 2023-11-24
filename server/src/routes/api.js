@@ -7,6 +7,6 @@ router.post("/createStudent",CreateStudent)
 router.get("/getData",getAllData)
 
 router.post("/UpdateStudent/:id",UpdateStudent)
-router.post("/DeleteStudent/:id",DeleteStudent)
+router.get("/DeleteStudent/:id",DeleteStudent)
 
 module.exports = router
