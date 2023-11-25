@@ -3,16 +3,31 @@ const StudentListModel = require('../model/StudentListModel')
 
 // create student list
 async function CreateStudent(req, res){
-    let {StudentName,StudentClass,StudentId,StudentFathersName,StudentMothersName,StudentNationality,
+    let {firstName,
+        lastName,
+        email,
+        StudentId,
+        gender,
+        dateOfBirth,
+        address,
+        StudentNationality,
+        phone,
+        admissionDate,
+        courses,
     } = req.body;
     
     let student = new StudentListModel({
-        StudentName,
-        StudentClass,
+        firstName,
+        lastName,
+        email,
         StudentId,
-        StudentFathersName,
-        StudentMothersName,
+        gender,
+        dateOfBirth,
+        address,
         StudentNationality,
+        phone,
+        admissionDate,
+        courses,
     })   
     student.save()
     res.send({success: "student Created Successfully"})

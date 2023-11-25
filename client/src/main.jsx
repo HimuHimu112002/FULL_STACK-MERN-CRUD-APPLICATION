@@ -13,12 +13,14 @@ import {
 import OutlateComponents from './components/OutlateComponents.jsx';
 import TodoCreate from './pages/TodoCreate.jsx';
 import Home from './pages/Home.jsx';
+import UpdateStudent from './pages/UpdateStudent.jsx';
 
 let router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<OutlateComponents/>}>
       <Route path="/home" element={<Home/>}></Route>
       <Route path="/create" element={<TodoCreate/>}></Route>
+      <Route path="/update" element={<UpdateStudent/>}></Route>
     </Route>
   )
 )
