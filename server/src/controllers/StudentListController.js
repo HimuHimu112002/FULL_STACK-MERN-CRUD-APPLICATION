@@ -1,5 +1,17 @@
 const StudentListModel = require('../model/StudentListModel')
+const FormModel = require('../model/FormModel')
 
+// Next.js form
+async function createFunc(req, res){
+    const {firstName,lastName,email} = req.body
+    let studentForm = new FormModel({
+        firstName,
+        lastName,
+        email
+    })   
+    studentForm.save()
+    res.send({success: "Form Created Successfully"}) 
+}
 
 // create student list
 async function CreateStudent(req, res){
@@ -72,4 +84,4 @@ async function DeleteStudent(req, res){
         res.status(200).json({ status: "fail", error: e.toString() });
     }
 }
-module.exports = {CreateStudent,getAllData,UpdateStudent,DeleteStudent}
+module.exports = {CreateStudent,getAllData,UpdateStudent,DeleteStudent,createFunc}

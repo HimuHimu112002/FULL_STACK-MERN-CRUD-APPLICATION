@@ -43,7 +43,7 @@ return (
 
     <div className="container mt-5">
         <div className="row shadow p-5 rounded">
-            <h3 className='text-center pb-4'>Please Input Student Information</h3>
+            <h3 className='text-center pb-4'>Update Student Information</h3>
             
             <div className="col-md-4 p-2">
                 <label className="form-label">First Name</label>

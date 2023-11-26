@@ -8,7 +8,9 @@ function Navmenu() {
   return (
     <Navbar expand="lg" className="shadow-sm">
       <Container>
-        <Navbar.Brand href="#">CRUD</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img className='img-fluid w-100' src='image/logo.png'></img>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -17,7 +19,7 @@ function Navmenu() {
             navbarScroll
           >
             <Link to="/home"><Nav.Item>Student List</Nav.Item></Link> 
-            <Link to="/create"><Nav.Item>Add New Student</Nav.Item></Link> 
+            <Link to="/create"><Nav.Item>New Student</Nav.Item></Link> 
           </Nav>
         </Navbar.Collapse>
       </Container>

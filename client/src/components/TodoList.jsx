@@ -34,7 +34,7 @@ const TodoList = () => {
                 <Col>
                     <div className='mt-5 shadow-sm'>
                         <Table responsive="sm">
-                            <thead>
+                            <thead className='text-center'>
                                 <tr>
                                     <th>Serial</th>
                                     <th>First Name</th>
