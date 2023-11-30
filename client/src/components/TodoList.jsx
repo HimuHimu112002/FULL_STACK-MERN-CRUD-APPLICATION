@@ -31,10 +31,13 @@ const TodoList = () => {
     <>
         <Container fluid>
             <Row>
-                <Col>
+                <div className='my-4 text-center'>
+                    <h2>Total Student : {data.length}</h2>
+                </div>
+                <Col md="10" className='m-auto'>
                     <div className='mt-5 shadow-sm'>
-                        <Table responsive="sm">
-                            <thead className='text-center'>
+                        <Table className='table table-striped table-hover' responsive="sm">
+                            <thead className='text-center table-info'>
                                 <tr>
                                     <th>Serial</th>
                                     <th>First Name</th>
@@ -48,7 +51,8 @@ const TodoList = () => {
                                     <th>phone</th>
                                     <th>admissionDate</th>
                                     <th>courses</th>
-                                    <th>Action</th>
+                                    <th>Delete</th>
+                                    <th>Update</th>
                                 </tr>
                             </thead>
                             {data.map((item, i)=>(
@@ -68,7 +72,9 @@ const TodoList = () => {
                                             <td>{item.admissionDate}</td>
                                             <td>{item.courses}</td>
                                             <td><Button onClick={()=>{handleDelete(item['_id'])}} variant="danger">Delete</Button></td>
-                                            <Link to={"/update?id="+item._id}><td><Button className='mt-2' variant="success">Update</Button></td></Link>
+
+                                            <td><Link to={"/update?id="+item._id}><Button variant="success">Update</Button></Link></td>
+
                                         </tr>    
                                     </tbody>
                                 </>
